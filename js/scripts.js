@@ -1,22 +1,53 @@
-var number1 = parseInt(prompt("enter a number:"));
-var number2 = parseInt(prompt("enter another number:"));
-
-
-var add = function(number1, number2){
-	return number1 + number2;
+// business logic
+var add = function(number1, number2) {
+  return number1 + number2;
 };
 
-var minus = function(number1, number2){
-	return number1 - number2;
+var minus = function(number1, number2) {
+  return number1 - number2;
 };
 
-var multiply = function(number1, number2){
-	return number1 * number2;
+var multiply = function(number1, number2) {
+  return number1 * number2;
 };
 
-var divide = function(number1, number2){
-	return number1 / number2;
+var divide = function(number1, number2) {
+  return number1 / number2;
 };
-
-
-alert(minus(number1, number2));
+// user logic
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+		var result = add(number1, number2);
+		$("#output").text(result);
+  });
+});
+$(document).ready(function() {
+  $("form#minus").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#minus1").val());
+    var number2 = parseInt($("#minus2").val());
+		var result = minus(number1, number2);
+		$("#output").text(result);
+  });
+});
+$(document).ready(function() {
+  $("form#multiply").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#multiply1").val());
+    var number2 = parseInt($("#multiply2").val());
+		var result = multiply(number1, number2);
+		$("#output").text(result);
+  });
+});
+$(document).ready(function() {
+  $("form#divide").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#divide1").val());
+    var number2 = parseInt($("#divide2").val());
+		var result = divide(number1, number2);
+		$("#output").text(result);
+  });
+});

@@ -16,7 +16,7 @@ var divide = function(number1, number2) {
 };
 // user logic
 $(document).ready(function() {
-  $("form#calculator").submit(function() {
+  $("form#calculator").submit(function() {  
     event.preventDefault();
     var number1 = parseInt($("#input1").val());
     var number2 = parseInt($("#input2").val());
